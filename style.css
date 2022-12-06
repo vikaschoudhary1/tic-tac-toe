@@ -1,0 +1,22 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1em;
+    background-color: rgb(178, 255, 255);
+
+}
+
+.box {
+    background-color: rgb(255, 225, 144);
+    height: 2em;
+    width: 2em;
+}
