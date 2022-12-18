@@ -58,8 +58,14 @@ body {
     cursor: not-allowed;
 }
 
+.board.x .cell:hover {
+
+}
+
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
     content: '';
     width: calc(var(--mark-size) * .15);
     height: var(--mark-size);
@@ -67,11 +73,13 @@ body {
     position: absolute;
 }
 
-.cell.x::before {
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
     transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
     transform: rotate(-45deg);
 }
 
