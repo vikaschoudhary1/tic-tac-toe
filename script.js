@@ -1,29 +1,29 @@
-const Player = (name, sign) => {
-    const myTurn = false;
-    const mySign = sign;
-    const sayName = () => console.log(name)
-    const markPlace = () => {
-        this.myTurn = false;
-    }
-    return {sayName, markPlace, myTurn, mySign}
-}
+const X_CLASS = 'x';
+const CIRCLE_CLASS = 'circle'
+const cellElements = document.querySelectorAll('[data-cell]')
+let circleTurn
 
-const gameBoard = (() => {
-    const boardStatus = [];
-    const askName = () => {
-        const name = prompt('what is your name');
-    }
-    const initiateGame = () => {
-        const name1 = askName();
-        this.player1 = Player(name1, 'x');
-        const name2 = askName();
-        this.player2 = Player(name2, '0');
-        return player1, player2
-    }
-    const endGame = () => {
+ cellElements.forEach(cell => {
+    cell.addEventListener('click', handleClick, { once: true})
+ })
 
-    }
-    return {boardStatus, initiateGame, endGame}
-})();
+ function handleClick(e) {
+    const cell = e.target
+    const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
+    placeMark(cell, currentClass)
 
- 
+    swapTurns()
+    setBoardHoverClass()
+ }
+
+ function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass)
+ }
+
+ function swapTurns() {
+    circleTurn = !circleTurn
+ }
+
+ function setBoardHoverClass() {
+    
+ }
